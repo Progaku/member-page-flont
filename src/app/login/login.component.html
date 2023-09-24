@@ -1,0 +1,35 @@
+<div class="p-3">
+  <h1>Progakuメンバーページへようこそ！</h1>
+  <div class="flex justify-content-center">
+    <p-card
+      header="ログイン"
+      subheader="Progakuの会員様のみご利用いただけます。"
+      class="flex flex-column p-3"
+    >
+      <div class="flex justify-content-center m-3 gap-3">
+        <div class="flex flex-column">
+          <span class="p-float-label">
+            <input
+              [formControl]="userIdForm"
+              [class.ng-invalid]="userIdForm.invalid"
+              aria-describedby="userid-help"
+              type="text"
+              id="userIdForm"
+              pInputText
+            />
+            <label for="userIdForm">合言葉</label>
+          </span>
+          <small
+            [ngStyle]="{color: '#e24c4c'}"
+            *ngIf="userIdForm.dirty && userIdForm.invalid"
+            id="userid-help"
+          >入力は必須です</small>
+        </div>
+        <p-button
+          [disabled]="userIdForm.invalid"
+          (onClick)="onClickLogin()"
+        >ログイン</p-button>
+      </div>
+    </p-card>
+  </div>
+</div>

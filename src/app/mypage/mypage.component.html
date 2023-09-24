@@ -1,0 +1,116 @@
+<p-card
+  header="マイページ"
+>
+  <div class="flex flex-row gap-6">
+    <div class="flex flex-column gap-3">
+      <p-image
+        [imageStyle]="{ borderRadius: '10px' }"
+        src="https://primefaces.org/cdn/primeng/images/demo/product/bamboo-watch.jpg"
+        alt="icon"
+      ></p-image>
+      <div class="flex justify-content-center">
+        <p-button>アイコンを設定</p-button>
+      </div>
+    </div>
+
+    <div class="flex flex-column gap-5">
+      <div class="flex flex-column">
+        <span class="p-float-label">
+          <input
+            [formControl]="nicknameForm"
+            [class.ng-invalid]="nicknameForm.invalid"
+            [maxlength]="50"
+            aria-describedby="nickname-help"
+            type="text"
+            id="nicknameForm"
+            pInputText
+          />
+          <label for="nicknameForm">ニックネーム</label>
+        </span>
+        <small
+          [ngStyle]="{color: '#e24c4c'}"
+          *ngIf="nicknameForm.dirty && nicknameForm.invalid"
+          id="nickname-help"
+        >入力は必須です</small>
+      </div>
+
+      <div class="flex flex-column">
+        <span class="p-float-label">
+          <input
+            [formControl]="twitterUserIdForm"
+            [maxlength]="100"
+            type="text"
+            id="twitterIdForm"
+            pInputText
+          />
+          <label for="twitterIdForm">X(Twitter)ユーザID</label>
+        </span>
+      </div>
+
+      <div class="flex flex-column">
+        <span class="p-float-label">
+          <p-calendar
+            [formControl]="birthdayForm"
+            id="birthdayForm"
+            dateFormat="yy/mm/dd"
+          ></p-calendar>
+          <label for="birthdayForm">誕生日</label>
+        </span>
+      </div>
+
+      <div class="flex flex-column">
+        <span class="p-float-label">
+          <input
+            [formControl]="prefecturesForm"
+            type="text"
+            id="prefecturesForm"
+            pInputText
+          />
+          <label for="prefecturesForm">都道府県</label>
+        </span>
+      </div>
+
+      <div class="flex flex-column">
+        <span class="p-float-label">
+          <p-chips
+            [formControl]="techChipForm"
+            id="techChipForm"
+          ></p-chips>
+          <label for="techChipForm">取り組んでいる技術</label>
+        </span>
+      </div>
+
+      <div class="flex flex-column">
+        <span class="p-float-label">
+          <textarea
+            [formControl]="participationReasonForm"
+            id="participationReasonForm"
+            pInputTextarea
+          ></textarea>
+          <label for="participationReasonForm">Progakuに参加した理由</label>
+        </span>
+      </div>
+
+      <div class="flex flex-column">
+        <span class="p-float-label">
+          <p-chips
+            [formControl]="hobbyForm"
+            id="hobbyForm"
+          ></p-chips>
+          <label for="hobbyForm">趣味</label>
+        </span>
+      </div>
+
+      <div class="flex flex-column">
+        <span class="p-float-label">
+          <textarea
+            [formControl]="descriptionForm"
+            id="descriptionForm"
+            pInputTextarea
+          ></textarea>
+          <label for="descriptionForm">自由記載</label>
+        </span>
+      </div>
+    </div>
+  </div>
+</p-card>
