@@ -28,6 +28,6 @@ export class LoginComponent {
   });
 
   onClickLogin(): void {
-    this.router.navigate(['/mypage']).then();
+    this.router.navigate(['/internal/mypage']).then();
   }
 }
