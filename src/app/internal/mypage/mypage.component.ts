@@ -49,6 +49,7 @@ export class MypageComponent {
   /** X(twitter) */
   twitterUserIdForm = new FormControl<string>('', {
     nonNullable: true,
+    validators: [Validators.pattern(/^[A-Za-z0-9_]+$/)]
   });
   /** 誕生日 */
   birthdayForm = new FormControl<Date | null>(null, {
