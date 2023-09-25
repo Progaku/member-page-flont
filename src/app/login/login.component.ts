@@ -8,6 +8,7 @@ import { InputTextModule } from 'primeng/inputtext';
 import { FormFieldComponent } from '@shared/atoms/form-field/form-field.component';
 import { FormErrorComponent } from '@shared/atoms/form-error/form-error.component';
 import { FormLabelComponent } from '@shared/atoms/form-label/form-label.component';
+import { ToastService } from '@shared/services/toast.service';
 
 @Component({
   selector: 'app-login',
@@ -27,6 +28,7 @@ import { FormLabelComponent } from '@shared/atoms/form-label/form-label.componen
 })
 export class LoginComponent {
   router: Router = inject(Router);
+  toastService: ToastService = inject(ToastService);
 
   userIdForm = new FormControl<string>('', {
     nonNullable: true,
@@ -34,6 +36,7 @@ export class LoginComponent {
   });
 
   onClickLogin(): void {
+    this.toastService.info('login');
     this.router.navigate(['/internal/mypage']).then();
   }
 }

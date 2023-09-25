@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ButtonModule } from 'primeng/button';
+import { ToastService } from '@shared/services/toast.service';
 
 @Component({
   selector: 'app-header',
@@ -12,4 +13,11 @@ import { ButtonModule } from 'primeng/button';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent {}
+export class HeaderComponent {
+  toastService: ToastService = inject(ToastService);
+
+  /** ログアウト */
+  onClickLogoutButton(): void {
+    this.toastService.success('ログアウトしました');
+  }
+}

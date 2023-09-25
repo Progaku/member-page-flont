@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
   FormControl,
@@ -16,6 +16,7 @@ import { InputTextareaModule } from 'primeng/inputtextarea';
 import { FormFieldComponent } from '@shared/atoms/form-field/form-field.component';
 import { FormErrorComponent } from '@shared/atoms/form-error/form-error.component';
 import { FormLabelComponent } from '@shared/atoms/form-label/form-label.component';
+import { ToastService } from '@shared/services/toast.service';
 
 @Component({
   selector: 'app-mypage',
@@ -38,6 +39,8 @@ import { FormLabelComponent } from '@shared/atoms/form-label/form-label.componen
   styleUrls: ['./mypage.component.scss']
 })
 export class MypageComponent {
+  toastService: ToastService = inject(ToastService);
+
   /** ニックネーム */
   nicknameForm = new FormControl<string>('', {
     nonNullable: true,
@@ -81,5 +84,10 @@ export class MypageComponent {
     participationReason: this.participationReasonForm,
     hobby: this.hobbyForm,
     description: this.descriptionForm,
-  })
+  });
+
+  /** アイコン設定ボタンの押下 */
+  onClickIconSettingButton(): void {
+    this.toastService.success('success setting icon');
+  }
 }
