@@ -1,6 +1,11 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {FormControl, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
+import {
+  FormControl,
+  FormGroup,
+  ReactiveFormsModule,
+  Validators
+} from '@angular/forms';
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
 import { CalendarModule } from 'primeng/calendar';
@@ -8,6 +13,9 @@ import { ChipsModule } from 'primeng/chips';
 import { ImageModule } from 'primeng/image';
 import { InputTextModule } from 'primeng/inputtext';
 import { InputTextareaModule } from 'primeng/inputtextarea';
+import { FormFieldComponent } from '@shared/atoms/form-field/form-field.component';
+import { FormErrorComponent } from '@shared/atoms/form-error/form-error.component';
+import { FormLabelComponent } from '@shared/atoms/form-label/form-label.component';
 
 @Component({
   selector: 'app-mypage',
@@ -22,6 +30,9 @@ import { InputTextareaModule } from 'primeng/inputtextarea';
     InputTextModule,
     InputTextareaModule,
     ReactiveFormsModule,
+    FormFieldComponent,
+    FormErrorComponent,
+    FormLabelComponent,
   ],
   templateUrl: './mypage.component.html',
   styleUrls: ['./mypage.component.scss']

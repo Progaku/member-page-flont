@@ -1,10 +1,13 @@
-import {Component, inject } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule, FormControl, Validators } from '@angular/forms';
+import { FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
 import { InputTextModule } from 'primeng/inputtext';
+import { FormFieldComponent } from '@shared/atoms/form-field/form-field.component';
+import { FormErrorComponent } from '@shared/atoms/form-error/form-error.component';
+import { FormLabelComponent } from '@shared/atoms/form-label/form-label.component';
 
 @Component({
   selector: 'app-login',
@@ -15,6 +18,9 @@ import { InputTextModule } from 'primeng/inputtext';
     CardModule,
     InputTextModule,
     ReactiveFormsModule,
+    FormFieldComponent,
+    FormErrorComponent,
+    FormLabelComponent,
   ],
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']

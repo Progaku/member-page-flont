@@ -24,7 +24,8 @@
       "dom"
     ],
     "paths": {
-      "@internal/*": ["./src/app/internal/*"]
+      "@internal/*": ["./src/app/internal/*"],
+      "@shared/*": ["./src/app/shared/*"]
     }
   },
   "angularCompilerOptions": {
