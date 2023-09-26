@@ -1,12 +1,12 @@
-import { inject, Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
+
 import { Message, MessageService } from 'primeng/api';
 
 type OmittedKeys = 'severity' | 'detail' | 'closable';
 type MessageOptions = Omit<Message, OmittedKeys>;
 
-
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ToastService {
   private readonly messageService = inject(MessageService);

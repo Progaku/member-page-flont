@@ -8,7 +8,7 @@ describe('FormLabelComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [FormLabelComponent]
+      imports: [FormLabelComponent],
     });
     fixture = TestBed.createComponent(FormLabelComponent);
     component = fixture.componentInstance;

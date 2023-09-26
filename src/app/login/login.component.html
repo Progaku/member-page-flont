@@ -2,9 +2,9 @@
   <h1>Progakuメンバーページへようこそ！</h1>
   <div class="flex justify-content-center">
     <p-card
+      class="flex flex-column p-3"
       header="ログイン"
       subheader="Progakuの会員様のみご利用いただけます。"
-      class="flex flex-column p-3"
     >
       <div class="flex align-items-center m-3 gap-3">
         <app-form-field [holdErrorFrame]="true">
@@ -13,18 +13,18 @@
             [formControl]="userIdForm"
             [class.ng-invalid]="userIdForm.invalid"
             appForm
-            type="text"
             id="userIdForm"
+            type="text"
             pInputText
           />
           <app-form-error
             *ngIf="userIdForm.dirty && userIdForm.hasError('required')"
-          >入力は必須です</app-form-error>
+            >入力は必須です</app-form-error
+          >
         </app-form-field>
-        <p-button
-          [disabled]="userIdForm.invalid"
-          (onClick)="onClickLogin()"
-        >ログイン</p-button>
+        <p-button [disabled]="userIdForm.invalid" (onClick)="onClickLogin()"
+          >ログイン</p-button
+        >
       </div>
     </p-card>
   </div>

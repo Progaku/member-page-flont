@@ -1,6 +1,4 @@
-<p-card
-  header="マイページ"
->
+<p-card header="マイページ">
   <div class="flex flex-row gap-6">
     <div class="flex flex-column gap-3">
       <p-image
@@ -9,7 +7,9 @@
         alt="icon"
       ></p-image>
       <div class="flex justify-content-center">
-        <p-button (onClick)="onClickIconSettingButton()">アイコンを設定</p-button>
+        <p-button (onClick)="onClickIconSettingButton()"
+          >アイコンを設定</p-button
+        >
       </div>
     </div>
 
@@ -20,14 +20,15 @@
           [formControl]="nicknameForm"
           [class.ng-invalid]="nicknameForm.invalid"
           appForm
-          type="text"
           id="nicknameForm"
+          type="text"
           pInputText
           placeholder="ニックネーム"
         />
         <app-form-error
           *ngIf="nicknameForm.dirty && nicknameForm.hasError('required')"
-        >入力は必須です</app-form-error>
+          >入力は必須です</app-form-error
+        >
       </app-form-field>
 
       <app-form-field [holdErrorFrame]="true">
@@ -36,14 +37,17 @@
           [formControl]="twitterUserIdForm"
           [maxlength]="100"
           appForm
-          type="text"
           id="twitterIdForm"
+          type="text"
           pInputText
           placeholder="@以降を入力ください"
         />
         <app-form-error
-          *ngIf="twitterUserIdForm.dirty && twitterUserIdForm.hasError('pattern')"
-        >使用できない文字が含まれています</app-form-error>
+          *ngIf="
+            twitterUserIdForm.dirty && twitterUserIdForm.hasError('pattern')
+          "
+          >使用できない文字が含まれています</app-form-error
+        >
       </app-form-field>
 
       <app-form-field [holdErrorFrame]="false">
@@ -62,8 +66,8 @@
         <input
           [formControl]="prefecturesForm"
           appForm
-          type="text"
           id="prefecturesForm"
+          type="text"
           pInputText
           placeholder="東京都"
         />
@@ -80,7 +84,9 @@
       </app-form-field>
 
       <app-form-field [holdErrorFrame]="false">
-        <app-form-label for="participationReasonForm">Progakuに参加した理由</app-form-label>
+        <app-form-label for="participationReasonForm"
+          >Progakuに参加した理由</app-form-label
+        >
         <textarea
           [formControl]="participationReasonForm"
           appForm
@@ -99,7 +105,6 @@
           placeholder="ゴルフ, マンガ, カラオケ"
         ></p-chips>
       </app-form-field>
-
 
       <app-form-field [holdErrorFrame]="false">
         <app-form-label for="descriptionForm">自由記載</app-form-label>

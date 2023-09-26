@@ -1,20 +1,22 @@
-import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Component, inject } from '@angular/core';
 import {
   FormControl,
   FormGroup,
   ReactiveFormsModule,
-  Validators
+  Validators,
 } from '@angular/forms';
+
 import { ButtonModule } from 'primeng/button';
-import { CardModule } from 'primeng/card';
 import { CalendarModule } from 'primeng/calendar';
+import { CardModule } from 'primeng/card';
 import { ChipsModule } from 'primeng/chips';
 import { ImageModule } from 'primeng/image';
 import { InputTextModule } from 'primeng/inputtext';
 import { InputTextareaModule } from 'primeng/inputtextarea';
-import { FormFieldComponent } from '@shared/atoms/form-field/form-field.component';
+
 import { FormErrorComponent } from '@shared/atoms/form-error/form-error.component';
+import { FormFieldComponent } from '@shared/atoms/form-field/form-field.component';
 import { FormLabelComponent } from '@shared/atoms/form-label/form-label.component';
 import { ToastService } from '@shared/services/toast.service';
 
@@ -36,7 +38,7 @@ import { ToastService } from '@shared/services/toast.service';
     FormLabelComponent,
   ],
   templateUrl: './mypage.component.html',
-  styleUrls: ['./mypage.component.scss']
+  styleUrls: ['./mypage.component.scss'],
 })
 export class MypageComponent {
   toastService: ToastService = inject(ToastService);
@@ -44,12 +46,12 @@ export class MypageComponent {
   /** ニックネーム */
   nicknameForm = new FormControl<string>('', {
     nonNullable: true,
-    validators: [Validators.required]
+    validators: [Validators.required],
   });
   /** X(twitter) */
   twitterUserIdForm = new FormControl<string>('', {
     nonNullable: true,
-    validators: [Validators.pattern(/^[A-Za-z0-9_]+$/)]
+    validators: [Validators.pattern(/^[A-Za-z0-9_]+$/)],
   });
   /** 誕生日 */
   birthdayForm = new FormControl<Date | null>(null, {

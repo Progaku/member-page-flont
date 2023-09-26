@@ -8,7 +8,7 @@ describe('FormHintComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [FormHintComponent]
+      imports: [FormHintComponent],
     });
     fixture = TestBed.createComponent(FormHintComponent);
     component = fixture.componentInstance;

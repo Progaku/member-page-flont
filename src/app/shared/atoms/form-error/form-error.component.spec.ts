@@ -8,7 +8,7 @@ describe('FormErrorComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [FormErrorComponent]
+      imports: [FormErrorComponent],
     });
     fixture = TestBed.createComponent(FormErrorComponent);
     component = fixture.componentInstance;

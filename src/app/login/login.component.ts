@@ -1,12 +1,14 @@
-import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Component, inject } from '@angular/core';
 import { FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
 import { InputTextModule } from 'primeng/inputtext';
-import { FormFieldComponent } from '@shared/atoms/form-field/form-field.component';
+
 import { FormErrorComponent } from '@shared/atoms/form-error/form-error.component';
+import { FormFieldComponent } from '@shared/atoms/form-field/form-field.component';
 import { FormLabelComponent } from '@shared/atoms/form-label/form-label.component';
 import { ToastService } from '@shared/services/toast.service';
 
@@ -24,7 +26,7 @@ import { ToastService } from '@shared/services/toast.service';
     FormLabelComponent,
   ],
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent {
   router: Router = inject(Router);
@@ -32,7 +34,7 @@ export class LoginComponent {
 
   userIdForm = new FormControl<string>('', {
     nonNullable: true,
-    validators: [Validators.required]
+    validators: [Validators.required],
   });
 
   onClickLogin(): void {

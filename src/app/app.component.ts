@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+
 import { ToastModule } from 'primeng/toast';
 
 @Component({
@@ -8,6 +9,6 @@ import { ToastModule } from 'primeng/toast';
   standalone: true,
   imports: [CommonModule, RouterOutlet, ToastModule],
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {}
