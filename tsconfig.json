@@ -24,6 +24,7 @@
       "dom"
     ],
     "paths": {
+      "@api/*": ["./src/app/api/*"],
       "@internal/*": ["./src/app/internal/*"],
       "@shared/*": ["./src/app/shared/*"]
     }

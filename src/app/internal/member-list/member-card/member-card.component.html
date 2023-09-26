@@ -1,0 +1,29 @@
+<p-card [header]="memberInfo.nickname">
+  <div class="flex flex-row gap-3">
+    <p-image [src]="memberInfo.iconImageId"></p-image>
+    <div class="flex flex-column gap-2">
+      <div *ngIf="memberInfo.twitterUserId">
+        <i class="pi pi-twitter"></i>
+      </div>
+
+      <div>
+        <p>誕生日</p>
+        <p>{{ memberInfo.birthday | date: 'yyyy/MM/dd' }}</p>
+      </div>
+
+      <div>
+        <p>都道府県</p>
+        <p>{{ memberInfo.prefectures }}</p>
+      </div>
+
+      <div>
+        <p>技術</p>
+        <div class="flex align-items-center gap-2 flex-wrap">
+          <ng-container *ngFor="let tech of memberInfo.techs; index as i">
+            <p-chip [label]="tech"></p-chip>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </div>
+</p-card>

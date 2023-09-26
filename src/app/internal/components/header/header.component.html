@@ -1,8 +1,16 @@
 <div class="flex justify-content-between m-2">
   <h1>Progaku</h1>
   <div class="flex align-items-center gap-3">
-    <div>メンバー</div>
-    <div>マイページ</div>
+    <p-button
+      (onClick)="onClickMemberButton()"
+      label="メンバー"
+      styleClass="p-button-text"
+    ></p-button>
+    <p-button
+      (onClick)="onClickMyPageButton()"
+      label="マイページ"
+      styleClass="p-button-text"
+    ></p-button>
     <p-button
       (onClick)="onClickLogoutButton()"
       label="ログアウト"
