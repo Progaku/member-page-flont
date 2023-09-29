@@ -1,7 +1,9 @@
-import { ResolveFn } from '@angular/router';
-import { MyData, MydataService } from '@api/mydata.service';
 import { inject } from '@angular/core';
+import { ResolveFn } from '@angular/router';
+
 import { Observable } from 'rxjs';
+
+import { MyData, MydataService } from '@api/mydata.service';
 
 export const mydataResolver: ResolveFn<MyData> = (
   _route,

@@ -1,11 +1,12 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import {
   FormControl,
   FormGroup,
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 
 import { ButtonModule } from 'primeng/button';
 import { CalendarModule } from 'primeng/calendar';
@@ -15,11 +16,10 @@ import { ImageModule } from 'primeng/image';
 import { InputTextModule } from 'primeng/inputtext';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 
+import { MyData, MydataService } from '@api/mydata.service';
 import { FormErrorComponent } from '@shared/components/atoms/form-error/form-error.component';
 import { FormFieldComponent } from '@shared/components/atoms/form-field/form-field.component';
 import { FormLabelComponent } from '@shared/components/atoms/form-label/form-label.component';
-import { ActivatedRoute } from '@angular/router';
-import { MyData, MydataService } from '@api/mydata.service';
 
 @Component({
   selector: 'app-mypage',

@@ -3,10 +3,10 @@ import { Routes } from '@angular/router';
 import { MemberDetailComponent } from '@internal/member-detail/member-detail.component';
 import { memberDetailResolver } from '@internal/resolver/member-detail.resolver';
 import { memberListResolver } from '@internal/resolver/member-list.resolver';
+import { mydataResolver } from '@internal/resolver/mydata.resolver';
 
 import { MemberListComponent } from './member-list/member-list.component';
 import { MypageComponent } from './mypage/mypage.component';
-import { mydataResolver } from '@internal/resolver/mydata.resolver';
 
 export const routes: Routes = [
   {

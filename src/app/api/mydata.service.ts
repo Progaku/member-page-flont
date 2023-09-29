@@ -1,5 +1,7 @@
-import { inject, Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
+
 import { Observable, of } from 'rxjs';
+
 import { ToastService } from '@shared/services/toast.service';
 
 export interface MyData {
@@ -40,7 +42,7 @@ export interface UpdateMyDataRequest {
 }
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class MydataService {
   toastService: ToastService = inject(ToastService);
@@ -49,7 +51,8 @@ export class MydataService {
     return of({
       id: 100,
       nickname: '私',
-      iconImageId: 'https://primefaces.org/cdn/primeng/images/demo/product/bamboo-watch.jpg',
+      iconImageId:
+        'https://primefaces.org/cdn/primeng/images/demo/product/bamboo-watch.jpg',
       twitterUserId: 'hikakin',
       birthday: new Date(),
       prefectures: '東京都',
