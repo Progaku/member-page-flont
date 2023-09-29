@@ -1,0 +1,61 @@
+<p-card>
+  <ng-template pTemplate="title">
+    <div class="flex flex-row gap-2">
+      <div>{{ memberDetail.nickname }}</div>
+      <div *ngIf="memberDetail.twitterUserId">
+        <i class="pi pi-twitter"></i>
+      </div>
+    </div>
+  </ng-template>
+  <div class="flex flex-row gap-3">
+    <p-image [src]="memberDetail.iconImageId" width="250"></p-image>
+    <div class="flex flex-column gap-2">
+      <div>
+        <p>ID</p>
+        <p>{{ memberDetail.id }}</p>
+      </div>
+
+      <div>
+        <p>誕生日</p>
+        <p>{{ memberDetail.birthday | date: 'yyyy/MM/dd' }}</p>
+      </div>
+
+      <div>
+        <p>都道府県</p>
+        <p>{{ memberDetail.prefectures }}</p>
+      </div>
+
+      <div>
+        <p>技術</p>
+        <div class="flex align-items-center gap-2 flex-wrap">
+          <ng-container *ngFor="let tech of memberDetail.techs; index as i">
+            <p-chip [label]="tech"></p-chip>
+          </ng-container>
+        </div>
+      </div>
+
+      <div>
+        <p>Progakuに参加した理由</p>
+        <div>
+          {{ memberDetail.participationReason }}
+        </div>
+      </div>
+
+      <div>
+        <p>趣味</p>
+        <div class="flex align-items-center gap-2 flex-wrap">
+          <ng-container *ngFor="let h of memberDetail.hobby; index as i">
+            <p-chip [label]="h"></p-chip>
+          </ng-container>
+        </div>
+      </div>
+
+      <div>
+        <p>何でも記載</p>
+        <div>
+          {{ memberDetail.description }}
+        </div>
+      </div>
+    </div>
+  </div>
+</p-card>
