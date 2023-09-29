@@ -7,7 +7,6 @@ import { ChipModule } from 'primeng/chip';
 import { ImageModule } from 'primeng/image';
 
 import { MemberDetail, MemberDetailInitial } from '@api/member-detail.service';
-import { MemberListItemInitial } from '@api/member-list.service';
 
 @Component({
   selector: 'app-member-detail',
@@ -25,6 +24,4 @@ export class MemberDetailComponent implements OnInit {
     const resolverData = this.activatedRoute.snapshot.data;
     this.memberDetail = resolverData['memberDetail'];
   }
-
-  protected readonly MemberListItemInitial = MemberListItemInitial;
 }
