@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import {
   FormControl,
   FormGroup,
@@ -18,7 +18,8 @@ import { InputTextareaModule } from 'primeng/inputtextarea';
 import { FormErrorComponent } from '@shared/components/atoms/form-error/form-error.component';
 import { FormFieldComponent } from '@shared/components/atoms/form-field/form-field.component';
 import { FormLabelComponent } from '@shared/components/atoms/form-label/form-label.component';
-import { ToastService } from '@shared/services/toast.service';
+import { ActivatedRoute } from '@angular/router';
+import { MyData, MydataService } from '@api/mydata.service';
 
 @Component({
   selector: 'app-mypage',
@@ -40,8 +41,12 @@ import { ToastService } from '@shared/services/toast.service';
   templateUrl: './mypage.component.html',
   styleUrls: ['./mypage.component.scss'],
 })
-export class MypageComponent {
-  toastService: ToastService = inject(ToastService);
+export class MypageComponent implements OnInit {
+  activatedRoute: ActivatedRoute = inject(ActivatedRoute);
+  mydataService: MydataService = inject(MydataService);
+
+  /** アイコン */
+  myIconPath = '';
 
   /** ニックネーム */
   nicknameForm = new FormControl<string>('', {
@@ -89,8 +94,22 @@ export class MypageComponent {
     description: this.descriptionForm,
   });
 
+  ngOnInit(): void {
+    const resolverData = this.activatedRoute.snapshot.data;
+    const mydata: MyData = resolverData['mydata'];
+    this.myIconPath = mydata.iconImageId;
+    this.nicknameForm.setValue(mydata.nickname);
+    this.twitterUserIdForm.setValue(mydata.twitterUserId ?? '');
+    this.birthdayForm.setValue(mydata.birthday);
+    this.prefecturesForm.setValue(mydata.prefectures);
+    this.techChipForm.setValue(mydata.techs);
+    this.participationReasonForm.setValue(mydata.participationReason);
+    this.hobbyForm.setValue(mydata.hobby);
+    this.descriptionForm.setValue(mydata.description);
+  }
+
   /** アイコン設定ボタンの押下 */
   onClickIconSettingButton(): void {
-    this.toastService.success('success setting icon');
+    this.mydataService.updateMyIcon('');
   }
 }

@@ -6,9 +6,16 @@ import { memberListResolver } from '@internal/resolver/member-list.resolver';
 
 import { MemberListComponent } from './member-list/member-list.component';
 import { MypageComponent } from './mypage/mypage.component';
+import { mydataResolver } from '@internal/resolver/mydata.resolver';
 
 export const routes: Routes = [
-  { path: 'mypage', component: MypageComponent },
+  {
+    path: 'mypage',
+    component: MypageComponent,
+    resolve: {
+      mydata: mydataResolver,
+    },
+  },
   {
     path: 'members',
     component: MemberListComponent,
