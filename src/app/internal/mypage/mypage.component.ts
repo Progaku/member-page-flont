@@ -98,14 +98,14 @@ export class MypageComponent implements OnInit {
     const resolverData = this.activatedRoute.snapshot.data;
     const mydata: MyData = resolverData['mydata'];
     this.myIconPath = mydata.iconImageId;
-    this.nicknameForm.setValue(mydata.nickname);
-    this.twitterUserIdForm.setValue(mydata.twitterUserId ?? '');
-    this.birthdayForm.setValue(mydata.birthday);
-    this.prefecturesForm.setValue(mydata.prefectures);
-    this.techChipForm.setValue(mydata.techs);
-    this.participationReasonForm.setValue(mydata.participationReason);
-    this.hobbyForm.setValue(mydata.hobby);
-    this.descriptionForm.setValue(mydata.description);
+    // this.nicknameForm.setValue(mydata.nickname);
+    // this.twitterUserIdForm.setValue(mydata.twitterUserId ?? '');
+    // this.birthdayForm.setValue(mydata.birthday);
+    // this.prefecturesForm.setValue(mydata.prefectures);
+    // this.techChipForm.setValue(mydata.techs);
+    // this.participationReasonForm.setValue(mydata.participationReason);
+    // this.hobbyForm.setValue(mydata.hobby);
+    // this.descriptionForm.setValue(mydata.description);
   }
 
   /** アイコン設定ボタンの押下 */
