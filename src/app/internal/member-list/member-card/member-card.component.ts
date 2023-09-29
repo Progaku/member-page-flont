@@ -5,10 +5,7 @@ import { CardModule } from 'primeng/card';
 import { ChipModule } from 'primeng/chip';
 import { ImageModule } from 'primeng/image';
 
-import {
-  MemberListItem,
-  MemberListItemInitial,
-} from '@api/interfaces/member-list';
+import {MemberListItem, MemberListItemInitial} from '@api/member-list.service';
 
 @Component({
   selector: 'app-member-card',
