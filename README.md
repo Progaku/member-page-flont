@@ -12,6 +12,7 @@ progakuメンバーページ
 
 ```sh
 npm install
+npm run prepare
 ```
 
 # Run
