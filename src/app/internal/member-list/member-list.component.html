@@ -2,7 +2,8 @@
   <ng-container *ngFor="let m of members; index as i">
     <app-member-card
       [memberInfo]="m"
-      (MemberTitleClickEmitter)="toMemberDetail($event)"
+      (click)='toMemberDetail(m.id)'
+      class="cursor-pointer"
     ></app-member-card>
   </ng-container>
 </div>
