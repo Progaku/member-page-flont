@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { MemberListItem } from '@api/member-list.service';
 
 import { MemberCardComponent } from './member-card/member-card.component';
-import {MemberListItem} from '@api/member-list.service';
 
 @Component({
   selector: 'app-member-list',
