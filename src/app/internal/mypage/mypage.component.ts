@@ -15,9 +15,9 @@ import { ImageModule } from 'primeng/image';
 import { InputTextModule } from 'primeng/inputtext';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 
-import { FormErrorComponent } from '@shared/atoms/form-error/form-error.component';
-import { FormFieldComponent } from '@shared/atoms/form-field/form-field.component';
-import { FormLabelComponent } from '@shared/atoms/form-label/form-label.component';
+import { FormErrorComponent } from '@shared/components/atoms/form-error/form-error.component';
+import { FormFieldComponent } from '@shared/components/atoms/form-field/form-field.component';
+import { FormLabelComponent } from '@shared/components/atoms/form-label/form-label.component';
 import { ToastService } from '@shared/services/toast.service';
 
 @Component({
