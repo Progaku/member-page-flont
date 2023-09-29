@@ -1,5 +1,6 @@
-import {Injectable} from '@angular/core';
-import {Observable, of} from 'rxjs';
+import { Injectable } from '@angular/core';
+
+import { Observable, of } from 'rxjs';
 
 export interface MemberListItem {
   id: number;
@@ -18,11 +19,11 @@ export const MemberListItemInitial: MemberListItem = {
   twitterUserId: null,
   birthday: null,
   prefectures: '',
-  techs: []
+  techs: [],
 };
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class MemberListService {
   getMemberList(): Observable<MemberListItem[]> {

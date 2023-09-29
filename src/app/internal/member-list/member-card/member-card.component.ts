@@ -1,11 +1,14 @@
 import { CommonModule } from '@angular/common';
-import {Component, EventEmitter, Input, Output} from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 import { CardModule } from 'primeng/card';
 import { ChipModule } from 'primeng/chip';
 import { ImageModule } from 'primeng/image';
 
-import {MemberListItem, MemberListItemInitial} from '@api/member-list.service';
+import {
+  MemberListItem,
+  MemberListItemInitial,
+} from '@api/member-list.service';
 
 @Component({
   selector: 'app-member-card',
