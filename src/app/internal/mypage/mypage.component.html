@@ -1,9 +1,9 @@
 <p-card header="マイページ">
-  <div class="flex flex-row gap-6">
+  <div class="flex flex-row flex-wrap gap-6">
     <div class="flex flex-column gap-3">
       <p-image
         [imageStyle]="{ borderRadius: '10px' }"
-        src="https://primefaces.org/cdn/primeng/images/demo/product/bamboo-watch.jpg"
+        [src]="myIconPath"
         alt="icon"
       ></p-image>
       <div class="flex justify-content-center">
@@ -13,7 +13,7 @@
       </div>
     </div>
 
-    <div class="flex flex-column gap-2">
+    <div class="flex flex-column gap-2 flex-grow-1">
       <app-form-field [holdErrorFrame]="true">
         <app-form-label for="nicknameForm">ニックネーム</app-form-label>
         <input
@@ -73,7 +73,7 @@
         />
       </app-form-field>
 
-      <app-form-field [holdErrorFrame]="false">
+      <app-form-field [holdErrorFrame]="false" class="p-fluid">
         <app-form-label for="techChipForm">取り組んでいる技術</app-form-label>
         <p-chips
           [formControl]="techChipForm"
@@ -89,14 +89,16 @@
         >
         <textarea
           [formControl]="participationReasonForm"
+          [autoResize]="true"
           appForm
           id="participationReasonForm"
           pInputTextarea
           placeholder="エンジニアになるため"
+          rows="3"
         ></textarea>
       </app-form-field>
 
-      <app-form-field [holdErrorFrame]="false">
+      <app-form-field [holdErrorFrame]="false" class="p-fluid">
         <app-form-label for="hobbyForm">趣味</app-form-label>
         <p-chips
           [formControl]="hobbyForm"
@@ -110,9 +112,11 @@
         <app-form-label for="descriptionForm">自由記載</app-form-label>
         <textarea
           [formControl]="descriptionForm"
+          [autoResize]="true"
           appForm
           id="descriptionForm"
           pInputTextarea
+          rows="5"
         ></textarea>
       </app-form-field>
     </div>
