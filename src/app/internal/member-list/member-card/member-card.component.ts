@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 
 import { CardModule } from 'primeng/card';
 import { ChipModule } from 'primeng/chip';
@@ -16,4 +16,9 @@ import {MemberListItem, MemberListItemInitial} from '@api/member-list.service';
 })
 export class MemberCardComponent {
   @Input({ required: true }) memberInfo: MemberListItem = MemberListItemInitial;
+  @Output() MemberTitleClickEmitter = new EventEmitter<number>();
+
+  onClickMemberTitle(): void {
+    this.MemberTitleClickEmitter.emit(this.memberInfo.id);
+  }
 }
