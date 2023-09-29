@@ -12,7 +12,9 @@ progakuメンバーページ
 
 ```sh
 npm install
-npm run prepare
+npx husky install
+npm pkg set scripts.prepare="husky install"
+npx husky add .husky/pre-commit "npx lint-staged"
 ```
 
 # Run
