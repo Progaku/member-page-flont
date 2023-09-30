@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+
 import { Observable, of } from 'rxjs';
 
 export interface LoginRequest {
@@ -7,15 +8,14 @@ export interface LoginRequest {
 
 export interface LoinResponse {
   idToken: string;
-  accessToken: string
+  accessToken: string;
   refreshToken: string;
 }
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthService {
-
   login(param: LoginRequest): Observable<LoinResponse> {
     return of({
       idToken: 'idToken',

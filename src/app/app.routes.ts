@@ -1,9 +1,9 @@
 import { Routes } from '@angular/router';
 
 import { TemplateComponent } from '@internal/template/template.component';
+import { isAuthGuard } from '@shared/guards/is-auth.guard';
 
 import { LoginComponent } from './login/login.component';
-import { isAuthGuard } from '@shared/guards/is-auth.guard';
 
 export const routes: Routes = [
   { path: 'login', component: LoginComponent },

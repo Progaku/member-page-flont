@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+
 import { LoinResponse } from '@api/auth.service';
 
 enum StorageKey {
@@ -27,7 +28,7 @@ class StorageRepository {
 }
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class StorageService {
   storage = new StorageRepository();

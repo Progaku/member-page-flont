@@ -12,9 +12,7 @@ progakuメンバーページ
 
 ```sh
 npm install
-npx husky install
-npm pkg set scripts.prepare="husky install"
-npx husky add .husky/pre-commit "npx lint-staged"
+
 ```
 
 # Run
@@ -29,4 +27,10 @@ ng serve
 
 ```sh
 ng test
+```
+
+## Format
+
+```sh
+npx prettier . --write
 ```

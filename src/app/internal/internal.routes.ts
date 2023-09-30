@@ -4,10 +4,10 @@ import { MemberDetailComponent } from '@internal/member-detail/member-detail.com
 import { memberDetailResolver } from '@internal/resolver/member-detail.resolver';
 import { memberListResolver } from '@internal/resolver/member-list.resolver';
 import { mydataResolver } from '@internal/resolver/mydata.resolver';
+import { isAuthGuard } from '@shared/guards/is-auth.guard';
 
 import { MemberListComponent } from './member-list/member-list.component';
 import { MypageComponent } from './mypage/mypage.component';
-import { isAuthGuard } from '@shared/guards/is-auth.guard';
 
 export const routes: Routes = [
   {
