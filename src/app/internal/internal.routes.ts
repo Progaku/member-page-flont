@@ -7,11 +7,13 @@ import { mydataResolver } from '@internal/resolver/mydata.resolver';
 
 import { MemberListComponent } from './member-list/member-list.component';
 import { MypageComponent } from './mypage/mypage.component';
+import { isAuthGuard } from '@shared/guards/is-auth.guard';
 
 export const routes: Routes = [
   {
     path: 'mypage',
     component: MypageComponent,
+    canActivate: [isAuthGuard],
     resolve: {
       mydata: mydataResolver,
     },
@@ -19,11 +21,13 @@ export const routes: Routes = [
   {
     path: 'members',
     component: MemberListComponent,
+    canActivate: [isAuthGuard],
     resolve: { memberList: memberListResolver },
   },
   {
     path: 'members/:id',
     component: MemberDetailComponent,
+    canActivate: [isAuthGuard],
     resolve: { memberDetail: memberDetailResolver },
   },
 ];
