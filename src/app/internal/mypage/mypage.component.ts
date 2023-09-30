@@ -45,6 +45,9 @@ export class MypageComponent implements OnInit {
   activatedRoute: ActivatedRoute = inject(ActivatedRoute);
   mydataService: MydataService = inject(MydataService);
 
+  /** 都道府県最大文字数 */
+  prefecturesMaxLength = 30;
+
   /** アイコン */
   myIconPath = '';
 
@@ -65,6 +68,7 @@ export class MypageComponent implements OnInit {
   /** 都道府県 */
   prefecturesForm = new FormControl<string>('', {
     nonNullable: true,
+    validators: [Validators.maxLength(this.prefecturesMaxLength)]
   });
   /** 技術 */
   techChipForm = new FormControl<string[]>([], {
@@ -98,14 +102,14 @@ export class MypageComponent implements OnInit {
     const resolverData = this.activatedRoute.snapshot.data;
     const mydata: MyData = resolverData['mydata'];
     this.myIconPath = mydata.iconImageId;
-    // this.nicknameForm.setValue(mydata.nickname);
-    // this.twitterUserIdForm.setValue(mydata.twitterUserId ?? '');
-    // this.birthdayForm.setValue(mydata.birthday);
-    // this.prefecturesForm.setValue(mydata.prefectures);
-    // this.techChipForm.setValue(mydata.techs);
-    // this.participationReasonForm.setValue(mydata.participationReason);
-    // this.hobbyForm.setValue(mydata.hobby);
-    // this.descriptionForm.setValue(mydata.description);
+    this.nicknameForm.setValue(mydata.nickname);
+    this.twitterUserIdForm.setValue(mydata.twitterUserId ?? '');
+    this.birthdayForm.setValue(mydata.birthday);
+    this.prefecturesForm.setValue(mydata.prefectures);
+    this.techChipForm.setValue(mydata.techs);
+    this.participationReasonForm.setValue(mydata.participationReason);
+    this.hobbyForm.setValue(mydata.hobby);
+    this.descriptionForm.setValue(mydata.description);
   }
 
   /** アイコン設定ボタンの押下 */

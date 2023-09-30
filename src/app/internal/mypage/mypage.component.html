@@ -65,12 +65,19 @@
         <app-form-label for="prefecturesForm">都道府県</app-form-label>
         <input
           [formControl]="prefecturesForm"
+          [maxlength]="prefecturesMaxLength"
           appForm
           id="prefecturesForm"
           type="text"
           pInputText
           placeholder="東京都"
         />
+        <app-form-error
+          *ngIf="
+            prefecturesForm.dirty && prefecturesForm.hasError('maxlength')
+          "
+        >最大 {{ prefecturesMaxLength }} 文字までです</app-form-error
+        >
       </app-form-field>
 
       <app-form-field [holdErrorFrame]="false" class="p-fluid">
