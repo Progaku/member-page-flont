@@ -1,9 +1,10 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import { Component, HostListener, inject } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { ButtonModule } from 'primeng/button';
 
+import { TABLET_THRESHOLD_WIDTH } from '@shared/constants/breakpoint';
 import { ToastService } from '@shared/services/toast.service';
 
 @Component({
@@ -16,6 +17,16 @@ import { ToastService } from '@shared/services/toast.service';
 export class HeaderComponent {
   toastService: ToastService = inject(ToastService);
   router: Router = inject(Router);
+
+  /** 現在の画面幅 */
+  currentWindowWidth = window.innerWidth;
+  /** タブレットとの閾値 */
+  TABLET_THRESHOLD_WIDTH = TABLET_THRESHOLD_WIDTH;
+
+  @HostListener('window:resize')
+  onResize() {
+    this.currentWindowWidth = window.innerWidth;
+  }
 
   /** メンバー一覧 */
   onClickMemberButton(): void {
