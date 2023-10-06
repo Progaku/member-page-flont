@@ -42,7 +42,7 @@ export class MemberListService {
         id: 2,
         nickname: 'bbb',
         iconImageId:
-          'https://primefaces.org/cdn/primeng/images/galleria/galleria1.jpg',
+          'https://cdn.vuetifyjs.com/images/parallax/material.jpg',
         twitterUserId: null,
         birthday: new Date(),
         prefectures: 'bbb',

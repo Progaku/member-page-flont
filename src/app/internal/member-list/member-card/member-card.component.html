@@ -7,31 +7,30 @@
       </div>
     </div>
   </ng-template>
+
   <div class="flex flex-row gap-3">
     <p-image
       [src]="memberInfo.iconImageId"
       [imageStyle]="{ borderRadius: '10px' }"
-      width="250"
+      [width]="imageWidth"
     ></p-image>
+
     <div class="flex flex-column gap-2">
-      <div>
-        <p>誕生日</p>
+      <app-item-list title="誕生日">
         <p>{{ memberInfo.birthday | date: 'yyyy/MM/dd' }}</p>
-      </div>
+      </app-item-list>
 
-      <div>
-        <p>都道府県</p>
+      <app-item-list title="都道府県">
         <p>{{ memberInfo.prefectures }}</p>
-      </div>
+      </app-item-list>
 
-      <div>
-        <p>技術</p>
+      <app-item-list title="技術">
         <div class="flex align-items-center gap-2 flex-wrap">
           <ng-container *ngFor="let tech of memberInfo.techs; index as i">
             <p-chip [label]="tech"></p-chip>
           </ng-container>
         </div>
-      </div>
+      </app-item-list>
     </div>
   </div>
 </p-card>

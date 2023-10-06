@@ -7,55 +7,51 @@
       </div>
     </div>
   </ng-template>
-  <div class="flex flex-row gap-3">
-    <p-image [src]="memberDetail.iconImageId" width="250"></p-image>
+  <div class="flex flex-row flex-wrap gap-6">
+    <p-image [src]="memberDetail.iconImageId" [width]="imageWidth"></p-image>
     <div class="flex flex-column gap-2">
-      <div>
-        <p>ID</p>
-        <p>{{ memberDetail.id }}</p>
-      </div>
+      <app-item-list
+        *ngIf="memberDetail.twitterUserId !== null"
+        title="twitter"
+      >
+        <p>{{ memberDetail.twitterUserId }}</p>
+      </app-item-list>
 
-      <div>
-        <p>誕生日</p>
+      <app-item-list title="誕生日">
         <p>{{ memberDetail.birthday | date: 'yyyy/MM/dd' }}</p>
-      </div>
+      </app-item-list>
 
-      <div>
-        <p>都道府県</p>
+      <app-item-list title="都道府県">
         <p>{{ memberDetail.prefectures }}</p>
-      </div>
+      </app-item-list>
 
-      <div>
-        <p>技術</p>
+      <app-item-list title="技術">
         <div class="flex align-items-center gap-2 flex-wrap">
           <ng-container *ngFor="let tech of memberDetail.techs; index as i">
             <p-chip [label]="tech"></p-chip>
           </ng-container>
         </div>
-      </div>
+      </app-item-list>
 
-      <div>
-        <p>Progakuに参加した理由</p>
+      <app-item-list title="Progakuに参加した理由">
         <div>
           {{ memberDetail.participationReason }}
         </div>
-      </div>
+      </app-item-list>
 
-      <div>
-        <p>趣味</p>
+      <app-item-list title="趣味">
         <div class="flex align-items-center gap-2 flex-wrap">
           <ng-container *ngFor="let h of memberDetail.hobby; index as i">
             <p-chip [label]="h"></p-chip>
           </ng-container>
         </div>
-      </div>
+      </app-item-list>
 
-      <div>
-        <p>何でも記載</p>
+      <app-item-list title="何でも記載">
         <div>
           {{ memberDetail.description }}
         </div>
-      </div>
+      </app-item-list>
     </div>
   </div>
 </p-card>

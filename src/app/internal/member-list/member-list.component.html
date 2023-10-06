@@ -1,9 +1,12 @@
-<div class="flex flex-column gap-5">
-  <ng-container *ngFor="let m of members; index as i">
+<div class="grid">
+  <div
+    *ngFor="let m of members; index as i"
+    class="col-12 lg:col-6"
+  >
     <app-member-card
       [memberInfo]="m"
       (click)="toMemberDetail(m.id)"
       class="cursor-pointer"
     ></app-member-card>
-  </ng-container>
+  </div>
 </div>
