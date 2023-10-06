@@ -9,13 +9,19 @@ import {
   MemberListItem,
   MemberListItemInitial,
 } from '@api/member-list.service';
-import { TABLET_THRESHOLD_WIDTH } from '@shared/constants/breakpoint';
 import { ItemListComponent } from '@internal/components/item-list/item-list.component';
+import { TABLET_THRESHOLD_WIDTH } from '@shared/constants/breakpoint';
 
 @Component({
   selector: 'app-member-card',
   standalone: true,
-  imports: [CommonModule, CardModule, ImageModule, ChipModule, ItemListComponent],
+  imports: [
+    CommonModule,
+    CardModule,
+    ImageModule,
+    ChipModule,
+    ItemListComponent,
+  ],
   templateUrl: './member-card.component.html',
   styleUrls: ['./member-card.component.scss'],
 })

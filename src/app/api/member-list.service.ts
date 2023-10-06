@@ -41,8 +41,7 @@ export class MemberListService {
       {
         id: 2,
         nickname: 'bbb',
-        iconImageId:
-          'https://cdn.vuetifyjs.com/images/parallax/material.jpg',
+        iconImageId: 'https://cdn.vuetifyjs.com/images/parallax/material.jpg',
         twitterUserId: null,
         birthday: new Date(),
         prefectures: 'bbb',

@@ -73,10 +73,8 @@
           placeholder="東京都"
         />
         <app-form-error
-          *ngIf="
-            prefecturesForm.dirty && prefecturesForm.hasError('maxlength')
-          "
-        >最大 {{ prefecturesMaxLength }} 文字までです</app-form-error
+          *ngIf="prefecturesForm.dirty && prefecturesForm.hasError('maxlength')"
+          >最大 {{ prefecturesMaxLength }} 文字までです</app-form-error
         >
       </app-form-field>
 

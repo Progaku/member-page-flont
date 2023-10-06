@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit, inject, HostListener } from '@angular/core';
+import { Component, HostListener, OnInit, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { CardModule } from 'primeng/card';
@@ -7,14 +7,20 @@ import { ChipModule } from 'primeng/chip';
 import { ImageModule } from 'primeng/image';
 
 import { MemberDetail, MemberDetailInitial } from '@api/member-detail.service';
-import { ItemListComponent } from '@internal/components/item-list/item-list.component';
 import { MemberListItemInitial } from '@api/member-list.service';
+import { ItemListComponent } from '@internal/components/item-list/item-list.component';
 import { TABLET_THRESHOLD_WIDTH } from '@shared/constants/breakpoint';
 
 @Component({
   selector: 'app-member-detail',
   standalone: true,
-  imports: [CommonModule, CardModule, ChipModule, ImageModule, ItemListComponent],
+  imports: [
+    CommonModule,
+    CardModule,
+    ChipModule,
+    ImageModule,
+    ItemListComponent,
+  ],
   templateUrl: './member-detail.component.html',
   styleUrls: ['./member-detail.component.scss'],
 })
@@ -43,5 +49,4 @@ export class MemberDetailComponent implements OnInit {
       return '250';
     }
   }
-
 }

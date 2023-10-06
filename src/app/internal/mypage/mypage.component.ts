@@ -68,7 +68,7 @@ export class MypageComponent implements OnInit {
   /** 都道府県 */
   prefecturesForm = new FormControl<string>('', {
     nonNullable: true,
-    validators: [Validators.maxLength(this.prefecturesMaxLength)]
+    validators: [Validators.maxLength(this.prefecturesMaxLength)],
   });
   /** 技術 */
   techChipForm = new FormControl<string[]>([], {
